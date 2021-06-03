@@ -13,6 +13,7 @@
 		726CC50A2668901E005E430B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726CC5092668901E005E430B /* Preview Assets.xcassets */; };
 		726CC5152668901F005E430B /* TooDoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CC5142668901F005E430B /* TooDoesTests.swift */; };
 		726CC5202668901F005E430B /* TooDoesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CC51F2668901F005E430B /* TooDoesUITests.swift */; };
+		726CC52E266893B3005E430B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CC52D266893B3005E430B /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		726CC51B2668901F005E430B /* TooDoesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TooDoesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		726CC51F2668901F005E430B /* TooDoesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooDoesUITests.swift; sourceTree = "<group>"; };
 		726CC5212668901F005E430B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		726CC52D266893B3005E430B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				726CC5022668901E005E430B /* TooDoesApp.swift */,
 				726CC5042668901E005E430B /* ContentView.swift */,
+				726CC52D266893B3005E430B /* Model.swift */,
 				726CC5062668901E005E430B /* Assets.xcassets */,
 				726CC50B2668901E005E430B /* Info.plist */,
 				726CC5082668901E005E430B /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726CC52E266893B3005E430B /* Model.swift in Sources */,
 				726CC5052668901E005E430B /* ContentView.swift in Sources */,
 				726CC5032668901E005E430B /* TooDoesApp.swift in Sources */,
 			);
