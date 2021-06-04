@@ -24,7 +24,10 @@ struct TaskListView: View {
                             TaskCell(taskCellViewModel: taskCellViewModel)
                         }
                         if presentAddNewItem{
-                            TaskCell(taskCellViewModel: TaskCellViewModel(task: Task(title: "", completed: false)))
+                            TaskCell(taskCellViewModel: TaskCellViewModel(task: Task(title: "", completed: false))){ task in
+                                self.taskListViewModel.addTask(task: task)
+                                self.presentAddNewItem.toggle()
+                            }
                         }
                     }
                 }.navigationBarTitle("Tarefas")
@@ -54,12 +57,16 @@ struct ContentView_Previews: PreviewProvider {
 struct TaskCell: View {
     @ObservedObject var taskCellViewModel: TaskCellViewModel
     
+    var onCommit: (Task) -> (Void) = { _ in }
+    
     var body: some View {
         HStack{
             Image(systemName: taskCellViewModel.task.completed ? "checkmark.circle.fill" : "circle")
                 .resizable()
                 .frame(width: 20, height: 20)
-            Text(taskCellViewModel.task.title)
+            TextField("Adicione o título da tarefa", text: $taskCellViewModel.task.title, onCommit: {
+                self.onCommit(self.taskCellViewModel.task)
+            })
         }
     }
 }
