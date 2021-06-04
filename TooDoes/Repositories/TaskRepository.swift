@@ -20,12 +20,23 @@ class TaskRepository: ObservableObject{
     }
     
     func loadData(){
-        db.collection("tasks").addSnapshotListener{ (querySnapshot, error) in
+        db.collection("tasks")
+            .order(by: "createdTime")
+            .addSnapshotListener{ (querySnapshot, error) in
             if let querySnapshot = querySnapshot{
                 self.tasks = querySnapshot.documents.compactMap{ document in
                     try? document.data(as: Task.self)
                 }
             }
+        }
+    }
+    
+    func  addTask(_ task: Task){
+        do{
+            let _ = try db.collection("tasks").addDocument(from: task)
+        }
+        catch{
+            fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
     
