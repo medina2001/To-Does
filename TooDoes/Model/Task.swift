@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import SwiftUI
-import Combine
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Task: Codable, Identifiable {
-    var id: String = UUID().uuidString
+    @DocumentID var id: String?
     var title: String
     var completed: Bool
 }
