@@ -24,8 +24,15 @@ class TaskRepository: ObservableObject{
             .order(by: "createdTime")
             .addSnapshotListener{ (querySnapshot, error) in
             if let querySnapshot = querySnapshot{
-                self.tasks = querySnapshot.documents.compactMap{ document in
-                    try? document.data(as: Task.self)
+                self.tasks = querySnapshot.documents.compactMap { document in
+                    do{
+                    let x = try document.data(as: Task.self)
+                        return x
+                    }
+                    catch{
+                        print(error)
+                    }
+                    return nil
                 }
             }
         }
