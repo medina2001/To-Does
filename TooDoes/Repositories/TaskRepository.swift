@@ -40,4 +40,14 @@ class TaskRepository: ObservableObject{
         }
     }
     
+    func updateTask(_ task: Task){
+        if let taskId = task.id{
+            do {
+                try db.collection("tasks").document(taskId).setData(from: task)
+            } catch {
+                fatalError("Unable to encode task: \(error.localizedDescription)")
+            }
+        }
+    }
+    
 }
