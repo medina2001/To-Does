@@ -11,6 +11,7 @@
 		7212C3A12669AEC9008328F3 /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212C3A02669AEC9008328F3 /* TaskCellViewModel.swift */; };
 		7212C3A32669B0FC008328F3 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212C3A22669B0FC008328F3 /* TaskListViewModel.swift */; };
 		7212C3A52669E716008328F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7212C3A42669E716008328F3 /* GoogleService-Info.plist */; };
+		724B798C266A7FB900A9C1EE /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724B798B266A7FB900A9C1EE /* TaskRepository.swift */; };
 		726CC5032668901E005E430B /* TooDoesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CC5022668901E005E430B /* TooDoesApp.swift */; };
 		726CC5052668901E005E430B /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CC5042668901E005E430B /* TaskListView.swift */; };
 		726CC5072668901E005E430B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726CC5062668901E005E430B /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		7212C3A02669AEC9008328F3 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		7212C3A22669B0FC008328F3 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		7212C3A42669E716008328F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		724B798B266A7FB900A9C1EE /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		726CC4FF2668901E005E430B /* TooDoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TooDoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726CC5022668901E005E430B /* TooDoesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooDoesApp.swift; sourceTree = "<group>"; };
 		726CC5042668901E005E430B /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		724B798A266A7F9F00A9C1EE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				724B798B266A7FB900A9C1EE /* TaskRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		726CC4F62668901E005E430B = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		726CC5012668901E005E430B /* TooDoes */ = {
 			isa = PBXGroup;
 			children = (
+				724B798A266A7F9F00A9C1EE /* Repositories */,
 				7212C39C266974A4008328F3 /* Model */,
 				7212C39E26698221008328F3 /* View */,
 				7212C39F2669AEAE008328F3 /* ViewModels */,
@@ -452,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724B798C266A7FB900A9C1EE /* TaskRepository.swift in Sources */,
 				726CC52E266893B3005E430B /* Task.swift in Sources */,
 				7212C3A12669AEC9008328F3 /* TaskCellViewModel.swift in Sources */,
 				7212C3A32669B0FC008328F3 /* TaskListViewModel.swift in Sources */,
