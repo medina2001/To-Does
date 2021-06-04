@@ -1,0 +1,6 @@
+framework module Pods_TooDoes {
+  umbrella header "Pods-TooDoes-umbrella.h"
+
+  export *
+  module * { export * }
+}
