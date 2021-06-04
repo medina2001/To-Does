@@ -12,7 +12,7 @@ class TaskCellViewModel: ObservableObject, Identifiable{
     @Published var taskRepository = TaskRepository()
     @Published var task: Task
     
-    var id = ""
+    var id: String = ""
     @Published var completionStateIconName = ""
     
     private var cancellables = Set<AnyCancellable>()
@@ -29,7 +29,7 @@ class TaskCellViewModel: ObservableObject, Identifiable{
         
         $task
             .compactMap{ task in
-                task.id
+                task.id 
             }
             .assign(to: \.id, on: self)
             .store(in: &cancellables)
@@ -37,8 +37,8 @@ class TaskCellViewModel: ObservableObject, Identifiable{
         $task
             .dropFirst()
             .debounce(for: 0.8, scheduler: RunLoop.main)
-            .sink{ task in
-                self.taskRepository.updateTask(task )
+            .sink{ [weak self] task in
+                self?.taskRepository.updateTask(task )
             }
             .store(in: &cancellables)
     }
