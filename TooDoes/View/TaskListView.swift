@@ -22,7 +22,9 @@ struct TaskListView: View {
                     List{
                         ForEach(taskListViewModel.taskCellViewModels){ taskCellViewModel in
                             TaskCell(taskCellViewModel: taskCellViewModel)
-                        }
+                        }.onDelete { indexSet in
+                            self.taskListViewModel.removeTasks(atOffsets: indexSet)
+                          }
                         if presentAddNewItem{
                             TaskCell(taskCellViewModel: TaskCellViewModel(task: Task(title: "", completed: false))){ task in
                                 self.taskListViewModel.addTask(task: task)
@@ -42,9 +44,11 @@ struct TaskListView: View {
             }.padding()
         }
     }
+    
+    func delete(at offsets: IndexSet) {
+        
 }
-
-
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

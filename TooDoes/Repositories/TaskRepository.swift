@@ -28,11 +28,12 @@ class TaskRepository: ObservableObject{
             .whereField("userId", isEqualTo: userId)
             .addSnapshotListener{ (querySnapshot, error) in
                 if let querySnapshot = querySnapshot{
-                    self.tasks = querySnapshot.documents.compactMap{ document in
+                    self.tasks = querySnapshot.documents.compactMap { document in
                         do{
                             let x = try document.data(as: Task.self)
                             return x
-                        }catch{
+                        }
+                        catch{
                             print(error)
                         }
                         return nil
@@ -42,9 +43,9 @@ class TaskRepository: ObservableObject{
     }
     
     func  addTask(_ task: Task){
+        var addedTask = task
+        addedTask.userId = Auth.auth().currentUser?.uid
         do{
-            var addedTask = task
-            addedTask.userID = Auth.auth().currentUser?.uid
             let _ = try db.collection("tasks").addDocument(from: addedTask)
         }
         catch{
@@ -60,6 +61,16 @@ class TaskRepository: ObservableObject{
                 fatalError("Unable to encode task: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func removeTask(_ task: Task) {
+      if let taskID = task.id {
+        db.collection("tasks").document(taskID).delete { (error) in
+          if let error = error {
+            print("Unable to remove document: \(error.localizedDescription)")
+          }
+        }
+      }
     }
     
 }

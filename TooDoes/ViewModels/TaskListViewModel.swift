@@ -28,4 +28,11 @@ class TaskListViewModel: ObservableObject {
     func addTask(task: Task){
         taskRepository.addTask(task)
     }
+    
+    func removeTasks(atOffsets indexSet: IndexSet) {
+      let viewModels = indexSet.lazy.map { self.taskCellViewModels[$0] }
+      viewModels.forEach { taskCellViewModel in
+        taskRepository.removeTask(taskCellViewModel.task)
+      }
+    }
 }
