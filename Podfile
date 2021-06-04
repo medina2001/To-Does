@@ -9,7 +9,7 @@ target 'TooDoes' do
 pod 'Firebase/Auth'
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
-pod 'FirebaseFirestoreSwift'
+pod 'FirebaseFirestoreSwift', '8.1.0-beta'
 
   target 'TooDoesTests' do
     inherit! :search_paths
