@@ -11,7 +11,6 @@ import Combine
 struct TaskListView: View {
     @ObservedObject var taskListViewModel = TaskListViewModel()
     
-    var tasks = testDataTasks
     
     @State var presentAddNewItem = false
     
